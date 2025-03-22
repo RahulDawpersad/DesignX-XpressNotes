@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="notepad.png" class="favicon" type="image/x-icon">
+  <title>XpressNotes</title>
+  <!-- Link to Font Awesome -->
+  <script src="https://kit.fontawesome.com/655b3b7e45.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="notepad-container">
+    <!-- Floating Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h3><img src="note.png" width="30" height="30" alt=""><span class="h3-span">Saved Notes</span></h3>
+      <ul id="savedNotesList"></ul>
+      <div id="noNotesMessage">No notes saved</div>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="toolbar">
+        <button id="saveBtn" title="Save Note"><i class="fa-solid fa-plus"></i> Save</button>
+        <button id="clearBtn" title="Clear Note"><i class="fa-solid fa-broom"></i> Clear</button>
+        <button id="themeBtn" title="Toggle Theme">🌙 Dark Mode</button>
+      </div>
+      <textarea id="notepad" placeholder="Start typing your notes here..." autocomplete></textarea>
+    </div>
+    <!-- Floating Action Button (Delete All) -->
+    <button id="deleteAllBtn" class="fab"><i class="fa-solid fa-trash"></i></button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
