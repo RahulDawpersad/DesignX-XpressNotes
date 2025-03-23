@@ -373,6 +373,12 @@ body.dark-mode #notepad::-webkit-scrollbar-thumb:hover {
     transition: background 0.3s, box-shadow 0.3s;
   }
 
+  .note-title::placeholder{
+    color: #FFFFFF;
+    font-family: 'Source Code Pro', monospace;
+
+  }
+
   .note-title:focus {
     background: rgba(255, 255, 255, 0.2);
   }
@@ -380,7 +386,6 @@ body.dark-mode #notepad::-webkit-scrollbar-thumb:hover {
   /* Dark mode styles for the title input field */
   body.dark-mode .note-title {
     background: rgba(0, 0, 0, 0.1);
-    color: #e0e0e0;
   }
   
   body.dark-mode .note-title:focus {
