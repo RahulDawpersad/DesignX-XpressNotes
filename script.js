@@ -8,6 +8,38 @@ const deleteAllBtn = document.getElementById('deleteAllBtn');
 const noNotesMessage = document.getElementById('noNotesMessage');
 const body = document.body;
 
+// PWA Installation Prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Show an install button or prompt
+  const installBtn = document.createElement('button');
+  installBtn.textContent = 'Install XpressNotes';
+  installBtn.style.position = 'fixed';
+  installBtn.style.bottom = '20px';
+  installBtn.style.right = '20px';
+  installBtn.style.padding = '10px 20px';
+  installBtn.style.backgroundColor = '#4a90e2';
+  installBtn.style.color = '#fff';
+  installBtn.style.border = 'none';
+  installBtn.style.borderRadius = '5px';
+  installBtn.style.cursor = 'pointer';
+  document.body.appendChild(installBtn);
+
+  installBtn.addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
 // Generate a unique user ID if it doesn't exist
 const getUserId = () => {
   let userId = localStorage.getItem('userId');
